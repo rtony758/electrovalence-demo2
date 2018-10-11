@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tony.electrovalencedemo2.repository.ElectrovalenceMapper">
+    <resultMap id="ElectrovalenceResultMap" type="com.tony.electrovalencedemo2.domain.Electrovalence">
+        <id column="id" property="id"/>
+        <result column="province" property="province"/>
+        <result column="electrovalence" property="electrovalence"/>
+    </resultMap>
+
+    <select id="selectById" parameterType="com.tony.electrovalencedemo2.domain.Electrovalence"
+            resultMap="ElectrovalenceResultMap">
+        SELECT province,electrovalence FROM electrovalence WHERE id=#{id}
+    </select>
+
+</mapper>
